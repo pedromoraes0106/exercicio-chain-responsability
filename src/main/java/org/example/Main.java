@@ -2,11 +2,6 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        ApprovalHandler manager = new ManagerApprovalHandler();
-        ApprovalHandler director = new DirectorApprovalHandler();
-        ApprovalHandler cfo = new CFOApprovalHandler();
-
-        manager.setNext(director).setNext(cfo);
 
         Requisicao[] requisicoes = {
                 new Requisicao(500, "Compra de material de escritório", "Administrativo"),
@@ -22,7 +17,6 @@ public class Main {
 
         for (Requisicao req : requisicoes) {
             System.out.println("📋 Processando: " + req.getDescricao());
-            manager.handle(req);
         }
     }
 }
